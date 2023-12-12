@@ -7,6 +7,7 @@ if(file_exists('../vendor/autoload.php')) {
 }
 // Autoloader (namespace)
 require('../app/Autoloader.php');
+//Espace de nom App
 \App\Autoloader::register();
 // Instance de PDO
 $app = \App\App::getInstance();
