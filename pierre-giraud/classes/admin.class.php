@@ -1,15 +1,12 @@
 <?php
     class Admin extends Utilisateur{
         protected $ban;
+        public const ABONNEMENT = 5;
         
-        public function __construct($n, $p){
+        public function __construct($n, $p, $r){
             $this->user_name = strtoupper($n);
             $this->user_pass = $p;
-        }
-        
-        public function getNom(){
-            parent::getNom();
-            echo ' (depuis la classe étendue)<br>';
+            $this->user_region = $r;
         }
         
         public function setBan($b){
@@ -19,6 +16,14 @@
             echo 'Utilisateurs bannis par '.$this->user_name. ' : ';
             foreach($this->ban as $valeur){
                 echo $valeur .', ';
+            }
+        }
+        
+        public function setPrixAbo(){
+            if($this->user_region === 'Sud'){
+                return $this->prix_abo = self::ABONNEMENT;
+            }else{
+                return $this->prix_abo = parent::ABONNEMENT / 2;
             }
         }
     }
