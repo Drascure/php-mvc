@@ -16,26 +16,12 @@
         $mathilde = new Admin('Math', 123456, 'Nord');
         $florian = new Utilisateur('Flo', 'flotri', 'Est');
         
-        $pierre->setPrixAbo();
-        $mathilde->setPrixAbo();
-        $florian->setPrixAbo();
+        $pierre->setBan('Paul', 'Jean');
+        $mathilde->setBan('Thomas');
         
-        $u = 'Utilisateur';
-        echo 'Valeur de ABONNEMENT dans Utilisateur : ' .$u::ABONNEMENT. '<br>';
-        echo 'Valeur de ABONNEMENT dans Admin : ' .Admin::ABONNEMENT. '<br>';
-        
-        echo 'Prix de l\'abonnement pour ';
-        $pierre->getNom();
-        echo ' : ';
-        $pierre->getPrixAbo();
-        echo '<br>Prix de l\'abonnement pour ';
-        $mathilde->getNom();
-        echo ' : ';
-        $mathilde->getPrixAbo();
-        echo '<br>Prix de l\'abonnement pour ';
-        $florian->getNom();
-        echo ' : ';
-        $florian->getPrixAbo();
+        $pierre->getBan();
+        echo '<br>';
+        $mathilde->getBan();
       ?>
       <p>Un paragraphe</p>
     </body>
