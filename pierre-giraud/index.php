@@ -15,8 +15,10 @@
             $pierre = new Admin('Pierre', 'abcdef');
             $mathilde = new Utilisateur('Math', 123456);
             
-            echo $pierre->getNom(). '<br>';
-            echo $mathilde->getNom(). '<br>';
+            $pierre->getNom();
+            $mathilde->getNom();
+            
+        echo '<br>';
             
             $pierre->setBan('Paul');
             $pierre->setBan('Jean');

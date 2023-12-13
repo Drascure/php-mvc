@@ -13,7 +13,7 @@
         }
         
         public function getNom(){
-            return $this->user_name;
+            echo $this->user_name;
         }
     }
 ?>
