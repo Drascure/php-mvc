@@ -7,22 +7,33 @@
     </head>
     
     <body>
-      <h1>Titre principal</h1>
-      <?php
-        require 'classes/utilisateur.class.php';
-        require 'classes/admin.class.php';
-        
-        $pierre = new Admin('Pierre', 'abcdef', 'Sud');
-        $mathilde = new Admin('Math', 123456, 'Nord');
-        $florian = new Utilisateur('Flo', 'flotri', 'Est');
-        
-        $pierre->setBan('Paul', 'Jean');
-        $mathilde->setBan('Thomas');
-        
-        $pierre->getBan();
-        echo '<br>';
-        $mathilde->getBan();
-      ?>
-      <p>Un paragraphe</p>
+        <h1>Titre principal</h1>
+        <?php
+            require 'classes/utilisateur.class.php';
+            require 'classes/admin.class.php';
+            require 'classes/abonne.class.php';
+            
+            $pierre = new Admin('Pierre', 'abcdef', 'Sud');
+            $mathilde = new Admin('Math', 123456, 'Nord');
+            $florian = new Abonne('Flo', 'flotri', 'Est');
+            
+            $pierre->setPrixAbo();
+            $mathilde->setPrixAbo();
+            $florian->setPrixAbo();
+            
+            echo 'Prix de l\'abonnement pour ';
+            $pierre->getNom();
+            echo ' : ';
+            $pierre->getPrixAbo();
+            echo '<br>Prix de l\'abonnement pour ';
+            $mathilde->getNom();
+            echo ' : ';
+            $mathilde->getPrixAbo();
+            echo '<br>Prix de l\'abonnement pour ';
+            $florian->getNom();
+            echo ' : ';
+            $florian->getPrixAbo();
+        ?>
+        <p>Un paragraphe</p>
     </body>
 </html>
