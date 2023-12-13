@@ -1,6 +1,19 @@
 <?php
-
-class Utilisateur {
-    public $user_name;
-    public $user_pass;
-}
+    class Utilisateur{
+        private $user_name;
+        private $user_pass;
+        
+        public function __construct($n, $p){
+            $this->user_name = $n;
+            $this->user_pass = $p;
+        }
+        
+        public function __destruct(){
+            //Du code à exécuter
+        }
+        
+        public function getNom(){
+            return $this->user_name;
+        }
+    }
+?>
