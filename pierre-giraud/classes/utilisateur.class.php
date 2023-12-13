@@ -1,7 +1,7 @@
 <?php
     class Utilisateur{
-        private $user_name;
-        private $user_pass;
+        protected $user_name;
+        protected $user_pass;
         
         public function __construct($n, $p){
             $this->user_name = $n;
