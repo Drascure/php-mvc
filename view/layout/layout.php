@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Framework POO</title>
-    <link rel="stylesheet" type="text/css" href="<?= $view->asset('css/style.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $view->asset('css/style2.css'); ?>">
-  </head>
-  <body>
+<html lang="fr">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVC Framework</title>
+  <link rel="stylesheet" type="text/css" href="<?= $view->asset('css/style.css'); ?>">
+</head>
 
-    <header>
-      <nav>
-          <ul>
-              <li><a href="<?= $view->path('home'); ?>">Home</a></li>
-              <li><a href="<?= $view->path('articles')?>">Articles</a></li>
-              <li><a href="<?= $view->path('contact'); ?>">Contact</a></li>
-              <li><a href="<?= $view->path('about'); ?>">A propos</a></li>
-              <li><a href="<?= $view->path('docphp')?>">Documentation</a></li>
-              <li><a href="<?= $view->path('single',array(12)); ?>">Single</a></li>
-              <li><a href="<?= $view->path('single2',array(12,'dedede')); ?>">Single2</a></li>
-          </ul>
-      </nav>
-    </header>
+<body class="padding-l">
 
-    <div class="container">
-        <?= $content; ?>
-    </div>
+  <header>
+    <?php include 'partials/nav.php' ?>
+  </header>
 
-    <footer>
+  <main class="margin-top-l">
+    <?= $content; ?>
+  </main>
 
-    </footer>
+  <footer class="display-flex justify-content-center margin-y-xl">
+    <p>MVC Framework - 2023</p>
+  </footer>
 
-    <script src="<?= $view->asset('js/main.js'); ?>"></script>
-  </body>
+  <script src="<?= $view->asset('js/main.js'); ?>"></script>
+</body>
+
 </html>

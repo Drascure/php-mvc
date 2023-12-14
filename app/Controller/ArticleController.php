@@ -17,11 +17,13 @@ class ArticleController extends Controller
 
         $articles = PostModel::all();
         $user = new UserModel;
+        $nbArticles = PostModel::count();
 
         $this->render('app.article.index',
         [
             'articles' => $articles,
             'user' => $user,
+            'nbArticles' => $nbArticles
         ]);
     }
 
@@ -30,8 +32,8 @@ class ArticleController extends Controller
         $article = PostModel::findById($id);
         $user = new UserModel;
 
-        $this->render('app.article.show', 
-        [    
+        $this->render('app.article.show',
+        [
             'article' => $article,
             'user' => $user,
         ]);

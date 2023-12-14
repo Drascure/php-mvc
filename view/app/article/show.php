@@ -1,8 +1,9 @@
-<section>
-<h2><?= $article->title ?></h2>
-
-<p><?= $article->content ?></p>
-
-<p>Cette merde à été écrit par <strong><?=$user->findById($article->author, 'id')->firstname . ' ' . $user->findById($article->author, 'id')->lastname?></strong></p>
-
-<p>Créé le: <?= $article->createdAt ?></p>
+<section class="card">
+    <article>
+        <h3><?= $article->title ?></h3>
+        <p><?= $article->content ?></p>
+        <p class="margin-top-l">
+            <strong>Publiée par :</strong> <?= $user->findById($article->author)->firstname . ' ' . $user->findById($article->author)->lastname ?> le <?= $article->modifiedAt ?>
+        </p>
+    </article>
+</section>
