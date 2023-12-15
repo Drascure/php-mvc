@@ -1,3 +1,8 @@
+<?php 
+// $nom = $users->firstname . ' ' . $users->lastname;
+
+?>
+
 <section>
     <h3>Ajout d'un article</h3>
     <form method="POST">
@@ -9,6 +14,8 @@
         <?= $formAdd->textarea("contenu") ?>
         <?= $formAdd->error("contenu") ?>
         <br>
-        <?= $formAdd->submit("", "Ajouter article") ?>
+        <?= $formAdd->select("auteur", $users, 'firstname') ?>
+        <br>
+        <?= $formAdd->submit("submitted", "Ajouter article") ?>
     </form>
 </section>
