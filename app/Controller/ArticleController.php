@@ -42,8 +42,16 @@ class ArticleController extends Controller
 
     public function delete($id)
     {
-        // PostModel::delete($id);
+        $articleDelete = $this->isArticleExist($id);
+        PostModel::delete($id);
         $this->redirect('articles');
+    }
+
+    public function isArticleExist($id)
+    {
+        $article = PostModel::findById($id);
+        
+        return (empty($article))? $this->Abort404() : $article; 
     }
 
 }
