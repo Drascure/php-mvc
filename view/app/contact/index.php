@@ -10,4 +10,3 @@
     Son nom: <?= $persons["nom"]?> <br> Son prénom: <?= $persons["prenom"]?><br> Son âge: <?= $persons["age"]?>
 </h2>
 
-<?= $this->dbug($persons)?>

@@ -87,7 +87,12 @@ class Controller
     {
         $view = new View();
         
-        header('Location: '.$url);
+        if(!empty($args)) {
+            $realurl = $view->path($url,$args);
+        } else {
+            $realurl = $view->path($url);
+        }
+        header('Location: '.$realurl);
         die();
     }
 

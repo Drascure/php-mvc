@@ -19,6 +19,7 @@ class ArticleController extends Controller
         $user = new UserModel;
         $nbArticles = PostModel::count();
 
+
         $this->render('app.article.index',
         [
             'articles' => $articles,
@@ -37,6 +38,12 @@ class ArticleController extends Controller
             'article' => $article,
             'user' => $user,
         ]);
+    }
+
+    public function delete($id)
+    {
+        // PostModel::delete($id);
+        $this->redirect('articles');
     }
 
 }
