@@ -1,9 +1,9 @@
 <?php
 //A décommenter pour afficher les erreurs
 
-/* ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); */
+error_reporting(E_ALL);
 
 date_default_timezone_set('Europe/Paris');
 session_start();
