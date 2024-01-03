@@ -14,6 +14,7 @@ class DefaultController extends Controller
     {
         $message = 'Bienvenue sur le framework MVC';
 
+        // Affiche la vue
         $this->render('app.default.frontpage',[
             'message' => $message,
         ]);

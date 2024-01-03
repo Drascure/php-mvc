@@ -36,8 +36,8 @@ class Database {
         if($this->pdo === null) {
             try {
                 $pdo = new PDO('mysql:host='.$this->bd_host.';dbname='.$this->bd_name, $this->bd_user, $this->bd_pass, array(
-                    // PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
                 ));
             }
@@ -49,11 +49,11 @@ class Database {
         return $this->pdo;
     }
 
-    public function query($sql,$className)
+    public function query($sql)
     {
         $query = $this->getPdo()->prepare($sql);
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_CLASS,$className);
+        return $query->fetchAll();
     }
 
     public function aggregation($sql)
@@ -69,7 +69,7 @@ class Database {
 
         $query->execute($bind);
 
-        $query->setFetchMode(PDO::FETCH_CLASS,$className);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
         if($one) {
             return $query->fetch();
         } else {

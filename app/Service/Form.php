@@ -103,13 +103,16 @@ class Form
     public function select($name, $entitys, $column, $data = '', $idd = 'id')
     {
         $html = '<select name="'.$name.'">';
+        // var_dump($entitys);
+        // die;
         foreach ($entitys as $entity) {
-            if(!empty($data) && $data == $entity->$idd){
+            if(!empty($data) && $data == $entity[$idd]){
                 $selected = ' selected="selected"';
             } else {
                 $selected = '';
             }
-            $html .= '<option value="'.$entity->$idd.'"'.$selected.'>'.$entity->$column.'</option>';
+            // $html .= '<option value="'.$entity->$idd.'"'.$selected.'>'.$entity->$column.'</option>';
+            $html .= '<option value="'.$entity[$idd].'"'.$selected.'>'.$entity[$column].'</option>';
         }
         $html .= '</select>';
         return $html;
